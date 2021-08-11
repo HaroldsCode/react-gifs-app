@@ -9,7 +9,7 @@ export const GifExpertApp = () => {
         <>
             <div className="introduce">
                 <h1 className="introduce__title">GifExpertApp</h1>
-                <p className="introduce__copy">Bienvenido, en este sitio web encontraras grifs divertidos para pasar el rato.</p>
+                <p className="introduce__copy">Bienvenido, en este sitio web encontraras gifs divertidos para pasar el rato.</p>
                 <AddCategory setNumbers={setCategories}/>
             </div>
             <div className="group">
