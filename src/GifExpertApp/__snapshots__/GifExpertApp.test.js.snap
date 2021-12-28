@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GitExpertApp tests should display the category 1`] = `
+<Fragment>
+  <div
+    className="introduce"
+  >
+    <h1
+      className="introduce__title"
+    >
+      GifExpertApp
+    </h1>
+    <p
+      className="introduce__copy"
+    >
+      Bienvenido, en este sitio web encontraras gifs divertidos para pasar el rato.
+    </p>
+    <AddCategory
+      setNumbers={[Function]}
+    />
+  </div>
+  <div
+    className="group"
+  >
+    <GifGrid
+      category="one punch"
+      key="one punch"
+    />
+  </div>
+</Fragment>
+`;
+
+exports[`GitExpertApp tests should display the component correctly 1`] = `
+<Fragment>
+  <div
+    className="introduce"
+  >
+    <h1
+      className="introduce__title"
+    >
+      GifExpertApp
+    </h1>
+    <p
+      className="introduce__copy"
+    >
+      Bienvenido, en este sitio web encontraras gifs divertidos para pasar el rato.
+    </p>
+    <AddCategory
+      setNumbers={[Function]}
+    />
+  </div>
+</Fragment>
+`;

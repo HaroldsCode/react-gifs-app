@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GridItem tests should display the component correctly 1`] = `
+<li
+  className="card"
+>
+  <img
+    alt="titulito"
+    className="card__img"
+    src="https://localhost/pp.jpg"
+    title="titulito"
+  />
+</li>
+`;

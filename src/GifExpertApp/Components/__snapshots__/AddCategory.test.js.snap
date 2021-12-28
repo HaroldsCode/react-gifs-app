@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddCategory tests should return component 1`] = `
+<form
+  className="from"
+  onSubmit={[Function]}
+>
+  <input
+    className="from__input"
+    onChange={[Function]}
+    placeholder="Escribe algo"
+    type="text"
+    value=""
+  />
+</form>
+`;

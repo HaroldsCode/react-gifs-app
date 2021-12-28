@@ -1,10 +1,9 @@
-import { useState } from "react"
+import { useState } from "react";
 import { AddCategory } from './Components/AddCategory';
 import { GifGrid } from "./Containers/GifGrid";
 
-export const GifExpertApp = () => {
-    // const [categories, setCategories] = useState(['One Punch']);
-    const [categories, setCategories] = useState('One Punch');
+export const GifExpertApp = ({categoryValue}) => {
+    const [categories, setCategories] = useState(categoryValue);
     return (
         <>
             <div className="introduce">
@@ -12,10 +11,15 @@ export const GifExpertApp = () => {
                 <p className="introduce__copy">Bienvenido, en este sitio web encontraras gifs divertidos para pasar el rato.</p>
                 <AddCategory setNumbers={setCategories}/>
             </div>
-            <div className="group">
-                {/* {categories.map(category => <GifGrid key={category} category={category}/>)} */}
-                <GifGrid key={categories} category={categories}/>
-            </div>
+            {(categories !== '') && (
+                <div className="group">
+                    <GifGrid key={categories} category={categories}/>
+                </div>
+            )}
         </>
     )
+}
+
+GifExpertApp.defaultProps = {
+    categoryValue: '',
 }

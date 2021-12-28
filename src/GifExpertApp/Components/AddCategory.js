@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PropTypes from 'prop-types';
+
 export const AddCategory = ({setNumbers}) => {
     const [inputValue, setInputValue] = useState('');
     const handleChange = (e)=>{
@@ -9,7 +10,6 @@ export const AddCategory = ({setNumbers}) => {
         e.preventDefault();
         if(inputValue.trim().length > 0){
             setNumbers(inputValue);
-            // setNumbers(n => [inputValue, ...n]);
             setInputValue('');
         }
     }
