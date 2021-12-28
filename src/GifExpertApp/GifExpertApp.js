@@ -1,25 +1,37 @@
 import { useState } from "react";
-import { AddCategory } from './Components/AddCategory';
+import { IoHomeSharp } from 'react-icons/io5';
+
+import { AddCategory } from "./Components/AddCategory";
+import { Footer } from "./Components/Footer";
 import { GifGrid } from "./Containers/GifGrid";
 
-export const GifExpertApp = ({categoryValue}) => {
-    const [categories, setCategories] = useState(categoryValue);
-    return (
-        <>
-            <div className="introduce">
-                <h1 className="introduce__title">GifExpertApp</h1>
-                <p className="introduce__copy">Bienvenido, en este sitio web encontraras gifs divertidos para pasar el rato.</p>
-                <AddCategory setNumbers={setCategories}/>
-            </div>
-            {(categories !== '') && (
-                <div className="group">
-                    <GifGrid key={categories} category={categories}/>
-                </div>
-            )}
-        </>
-    )
-}
+export const GifExpertApp = () => {
+  const [query, setQuery] = useState(localStorage.getItem("query") || "");
 
-GifExpertApp.defaultProps = {
-    categoryValue: '',
-}
+  const emptyInput = () => {
+    setQuery( q => q = '' );
+    localStorage.setItem("query", '');
+  }
+
+  return (
+    <main>
+      <div className="introduce">
+        <div className="introduce__group">
+          <h1 className="introduce__title">GifExpertApp</h1>
+          { !!query && <IoHomeSharp onClick={emptyInput}/> }
+        </div>
+        <AddCategory setQuery={setQuery} query={query} />
+      </div>
+      {query !== "" ? (
+        <div className="group">
+          <GifGrid param={query} />
+        </div>
+      ) : (
+        <div className="empty">
+          <p className="empty__text">¿Tiene un gif en mente? ¡Búscalo!</p>
+        </div>
+      )}
+      <Footer/>
+    </main>
+  );
+};
