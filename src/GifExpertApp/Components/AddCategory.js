@@ -14,7 +14,7 @@ export const AddCategory = ({ setQuery, query }) => {
   }, [ query ])
 
   const handleChange = (e) => {
-    let data = e.target.value.trim();
+    let data = e.target.value;
     setInputValue(data);
     if(data.length > 0) {
       setIsNotEmpty( true );
